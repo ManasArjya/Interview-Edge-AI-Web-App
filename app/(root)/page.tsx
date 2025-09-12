@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link";        //Home page
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";

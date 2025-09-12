@@ -9,9 +9,11 @@ const monaSans = Mona_Sans({
   subsets: ["latin"],
 });
 
+// Title of page etc.
+
 export const metadata: Metadata = {
-  title: "PrepWise",
-  description: "An AI-powered platform for preparing for mock interviews",
+  title: "Interview Edge",
+  description: "An AI-powered platform for preparing for mock interviews and tests with real-time feedback.",
 };
 
 export default function RootLayout({

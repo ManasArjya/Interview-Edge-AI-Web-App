@@ -1,4 +1,4 @@
-import { generateText } from "ai";
+import { generateText } from "ai";                        //api file for routing of requests
 import { google } from "@ai-sdk/google";
 
 import { db } from "@/firebase/admin";
@@ -7,6 +7,7 @@ import { getRandomInterviewCover } from "@/lib/utils";
 export async function POST(request: Request) {
   const { type, role, level, techstack, amount, userid } = await request.json();
 
+  // for genrating questions using Gemini
   try {
     const { text: questions } = await generateText({
       model: google("gemini-2.0-flash-001"),
@@ -25,6 +26,7 @@ export async function POST(request: Request) {
     `,
     });
 
+    // for generating interview using vapi
     const interview = {
       role: role,
       type: type,
