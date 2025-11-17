@@ -58,7 +58,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/adrianhajdin/ai_mock_interviews.git
+git clone https://github.com/ManasArjya/Interview-Edge-AI-Web-App
 cd ai_mock_interviews
 ```
 
