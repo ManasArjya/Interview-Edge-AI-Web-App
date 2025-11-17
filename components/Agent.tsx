@@ -28,6 +28,16 @@ interface SavedMessage {
   content: string;
 }
 
+interface AgentProps {
+  userName: string;
+  userId?: string;
+  profileImage?: string; // add this
+  interviewId?: string;
+  feedbackId?: string;
+  questions?: { id: string; text: string }[];
+  type: "generate" | "otherType"; // your existing types
+}
+
 const Agent = ({
   userName,
   userId,
@@ -47,8 +57,17 @@ const Agent = ({
       setCallStatus(CallStatus.ACTIVE);
     };
 
-    const onCallEnd = () => {
+    const onCallEnd = (reason?: string) => {
       setCallStatus(CallStatus.FINISHED);
+
+        if (reason === "ejected") {
+          alert("You were removed from the call.");
+          router.push("/"); // redirect to dashboard
+        } else if (reason === "ended") {
+          console.log("Call ended normally");
+        } else {
+          console.log("Call ended due to:", reason);
+  }
     };
 
     const onMessage = (message: Message) => {

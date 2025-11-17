@@ -3,6 +3,14 @@
 import { auth, db } from "@/firebase/admin";
 import { cookies } from "next/headers";
 
+//i added profileURL as optional to fix TS error
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  profileURL?: string; // optional, fixes the TS error
+};
+
 // Session duration (1 week)
 const SESSION_DURATION = 60 * 60 * 24 * 7;
 

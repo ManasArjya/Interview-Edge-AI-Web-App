@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
   //     },
   //   ],
   // },
+  images: {
+    domains: [
+      "lh3.googleusercontent.com", // Google profile pictures
+      "firebasestorage.googleapis.com", // Firebase storage
+    ],
+  },
+  
   eslint: {
     ignoreDuringBuilds: true,
   },

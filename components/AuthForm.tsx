@@ -95,7 +95,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
     }
   };
 
-  const isSignIn = type === "sign-in";
+  const isSignIn = type === "sign-in";      // to check if the form is for sign in or sign up
 
   return (
     <div className="card-border lg:min-w-[566px]">
@@ -115,7 +115,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
             {!isSignIn && (
               <FormField
                 control={form.control}
-                name="name"
+                name="name"                       // name field only for sign up
                 label="Name"
                 placeholder="Your Name"
                 type="text"
